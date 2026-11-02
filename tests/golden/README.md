@@ -76,7 +76,7 @@ The `.xls` files from KAP are HTML pages.
 4. Read `column` and the number **inside that one cell only.** Do not use the cell's `title` attribute: in some filings it holds another number or sits on the neighbouring row (#148). If the `title` differs from the shown number, write both in `note`.
 5. Match the column to its header. Value cells start at `col-order-class-4` and follow the headers from left to right. Write `period_label` like this:
    - A header shown on two lines, such as `Önceki Dönem` over `01.01.2025 - 30.06.2025`, is one cell. Join the lines with a single space: `Önceki Dönem 01.01.2025 - 30.06.2025`.
-   - Bank tables have a second header row (`TP` / `YP` / `Toplam`) under each period. Add it after ` · `: `Cari Dönem 30.06.2026 · TP`.
+   - Bank tables have a second header row (`TP` / `YP` / `Toplam`) under each period. Add it in parentheses, as the parser stores it (#125): `Cari Dönem 30.06.2026 (TP)`, `Cari Dönem 30.06.2026 (Toplam)`.
 6. Read `Sunum Para Birimi` at the top of the page for `scale_unit`.
 
 ## Checking a file
